@@ -1,0 +1,312 @@
+---
+title: "Statistiques descriptives"
+---
+
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+::: {.justify}
+Cette section est dédiée à la présentation des statistiques descriptives relatives à chaque base de données :
+
+- **base_brevets** : Cette base contient des informations sur les brevets déposés par chaque entreprise.
+- **base_emp** : Cette base répertorie les offres d'emploi proposées par les entreprises.
+- **base_emp_inno** : Il s'agit d'une base de données combinant les deux précédentes, offrant ainsi une vision plus globale.
+:::
+
+## I) Les statistiques sur les brevets déposés
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+
+data = data.frame(
+  Minimum = 1,
+  Médiane = 4,
+  Maximum = 17702,
+  Moyenne = 31.66895,
+  Écart_type = 363.4751,
+  Manquantes = 0
+)
+
+kable(data, format = "pipe", 
+      caption = "Statistiques sur les brevets déposés par les entreprises",
+      col.names = c("Minimum", "Médiane", "Maximum", "Moyenne", "Écart type", "Manquantes"))
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+
+data = data.frame(
+  Rang = c(1, 2, 3, 4, 5),
+  Entreprise = c(
+    "Commissariat à l'Énergie Atomique et aux Énergies Alternatives",
+    "Centre National de la Recherche Scientifique (C.N.R.S.)",
+    "Valeo",
+    "Alcatel",
+    "Thomson"
+  ), 
+  Brevets = c(17702, 15909, 10116, 10101, 8415)
+)
+
+kable(data, 
+      caption = "Classement des entreprises ayant déposées le plus grand nombre de brevets", 
+      format = "html", align = "l",
+      col.names = c("Rang", "Nom de l'entreprise", "Nombre de brevets")) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE
+  )
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+
+data = data.frame(
+  Rang = c(1, 2, 3, 4, 5),
+  IPC = c("H01L","A61K","F21S","H04W", "H04N" ),
+  Description = c(
+    "Dispositifs à semi-conducteurs ; dispositifs électriques à l'état solide non prévus ailleurs",
+    "Préparation à usage médical, dentaire ou pour la toilette",
+    "Dispostifs d'éclairage non portatifs ; dispositifs d'éclairages de véhicules spécialement adaptés à l'extérieur des véhicules",
+    "Réseaux de la communication sans fil",
+    "Transmission d'images, Télévison"
+  ), 
+  Nombre=c(681, 400, 276, 266, 220)
+)
+
+kable(data, caption = "Liste des domaines où le plus de brevets ont été déposés : Codes et Descriptions", 
+      format = "html", 
+      align = "l",
+      col.names = c("Rang", "IPC", "Description", "Nombre de brevets")) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE
+  )
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+
+data = data.frame(
+  Rang = c(1, 2, 3, 4, 5),
+  Ville = c(
+    "Paris",
+    "Boulogne-Billancourt",
+    "Courbevoie",
+    "Le Mesnil-Saint-Denis",
+    "Issy-les-Moulineaux"
+  ),
+  Code_postal= c(75000, 92012, 92026, 78320, 92040 ),
+  Brevets = c(105557, 17750, 14999, 10116, 9688)
+)
+
+kable(data, caption = "Classement des villes ayant enregistrées le plus grand nombre de brevets", 
+      format = "html", 
+      align = "l",
+      col.names = c("Rang", "Ville", "Code postal", "Nombre de brevets")) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE
+  )
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+
+data = data.frame(
+  Rang = c(1, 2, 3, 4, 5),
+  Numéro = c(
+    75,
+    92,
+    78,
+    69,
+    38
+  ), 
+  Département = c("Paris", "Hauts-de-Seine", "Yvelines", "Rhône", "Isère"),
+  Brevets = c(105557, 71966, 22506, 13608, 12285)
+)
+
+kable(data, caption = "Classement des départements ayant enregistrés le plus grand nombre de dépôts de brevets", 
+      format = "html", 
+      align = "l",
+      col.names = c("Rang", "Numéro", "Nom du département", "Nombre de brevets")) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE
+  )
+```
+
+## II) Les statistiques sur les offres d'emploi proposées
+
+### 1) Pour les variables numériques 
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+data = data.frame(
+  Minimum = 1,
+  Médiane = 1,
+  Maximum = 68,
+  Moyenne = 4.36259,
+  Écart_type = 8.537308,
+  Manquantes = 0
+)
+
+kable(data, format = "pipe", 
+      caption = "Statistiques sur les offres d'emploi proposées par les entreprises",
+      col.names = c("Minimum", "Médiane", "Maximum", "Moyenne", "Écart type", "Manquantes"))
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+data = data.frame(
+  Minimum = 9000,
+  Médiane = 46250,
+  Maximum = 158625,
+  Moyenne = 50853.55,
+  Écart_type = 24612.92,
+  Manquantes = 518
+)
+
+kable(data, format = "pipe", 
+      caption = "Statistiques sur les salaires annuels offerts par les entreprises (en euros)",
+      col.names = c("Minimum", "Médiane", "Maximum", "Moyenne", "Écart type", "Manquantes"))
+```
+
+### 2) Pour les variables en chaîne de caractères
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+
+data = data.frame(
+  Rang = c(1, 2, 3, 4, 5),
+  Compétence = c(
+    "Esprit d'équipe",
+    "Python",
+    "SQL",
+    "Git",
+    "Statistiques"
+  ),
+  Nombre=c(502, 267, 204, 185, 178)
+)
+
+kable(data, caption = "Liste des coméptences les plus demandées par les entreprises", 
+      format = "html", 
+      align = "l",
+      col.names = c("Rang", "Compétence requise", "Fréquence")) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE
+  )
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+
+data = data.frame(
+  Rang = c(1, 2, 3, 4, 5),
+  Secteur = c(
+    "Service public des collectivités territoriales",
+    "BEP, CAP, Services aux Personnes, Particuliers",
+    "Industrie high-tech, Telecom, Média, Internet, Communication",
+    "Secteur Energie, Environnement",
+    "Services aux Entreprises"
+  ), 
+  Salaire =c(60000,56750,56500,51666.67,48422.35)
+)
+
+kable(data, caption = "Liste des secteurs offrant les salaires annuels les plus attractifs (en euros)", 
+      format = "html", 
+      align = "l",
+      col.names = c("Rang", "Secteur", "Salaire annuel (en euros)")) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE
+  )
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+
+data = data.frame(
+  Rang = c(1, 2, 3, 4, 5),
+  Numéro = c(
+    "45",
+    "78",
+    "75",
+    "64",
+    "38"
+  ),
+  Département =c("Loiret", "Yvelines", "Paris", "Pyrénées-Atlantiques", "Isère"),
+  Salaire = c(72500, 68396, 65242, 50000, 49670)
+)
+
+kable(data, caption = "Liste des départements offrant les salaires annuels les plus attractifs (en euros)", 
+      format = "html", 
+      align = "l", 
+      col.names = c("Rang", "Numéro", "Nom du département", "Salaire annuel (en euros)")) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE
+  )
+```
+
+::: {.justify}
+## III) Les statistiques sur la base combinant les brevets et les offres d'emploi
+:::
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+data = data.frame(
+  Minimum =  1,
+  Médiane = 4,
+  Maximum = 17702,
+  Moyenne = 31.66895,
+  Écart_type = 363.4751,
+  Manquantes = 591
+)
+
+kable(data, format = "pipe", 
+      caption = "Statistiques sur les brevets déposés par les entreprises",
+      col.names = c("Minimum", "Médiane", "Maximum", "Moyenne", "Écart type", "Manquantes"))
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+data = data.frame(
+  Minimum = 1,
+  Médiane = 1,
+  Maximum = 68,
+  Moyenne = 4.36259,
+  Écart_type = 8.537308,
+  Manquantes = 10389
+)
+
+kable(data, format = "pipe", 
+      caption = "Statistiques sur les offres d'emploi proposées par les entreprises",
+      col.names = c("Minimum", "Médiane", "Maximum", "Moyenne", "Écart type", "Manquantes"))
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+data = data.frame(
+  Minimum = 9000,
+  Médiane = 46250,
+  Maximum = 158625,
+  Moyenne = 50853.55,
+  Écart_type = 24612.92,
+  Manquantes = 10907
+)
+
+kable(data, format = "pipe", 
+      caption = "Statistiques sur les salaires annuels offerts par les entreprises (en euros)",
+      col.names = c("Minimum", "Médiane", "Maximum", "Moyenne", "Écart type", "Manquantes"))
+```

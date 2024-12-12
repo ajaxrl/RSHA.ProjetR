@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "stats.html",
+    "href": "stats.html",
+    "title": "Statistiques descriptives",
+    "section": "",
+    "text": "Statistiques sur les brevets déposés par les entreprises\n\n\nMinimum\nMédiane\nMaximum\nMoyenne\nÉcart type\nManquantes\n\n\n\n\n1\n4\n17702\n31.66895\n363.4751\n591\nStatistiques sur les offres d’emploi proposées par les entreprises\n\n\nMinimum\nMédiane\nMaximum\nMoyenne\nÉcart type\nManquantes\n\n\n\n\n1\n1\n68\n4.36259\n8.537308\n10389\nStatistiques sur les salaires annuels offerts par les entreprises (en euros)\n\n\nMinimum\nMédiane\nMaximum\nMoyenne\nÉcart type\nManquantes\n\n\n\n\n9000\n46250\n158625\n50853.55\n24612.92\n10907"
+  },
+  {
+    "objectID": "stats.html#i-les-statistiques-sur-les-brevets-déposés",
+    "href": "stats.html#i-les-statistiques-sur-les-brevets-déposés",
+    "title": "Statistiques descriptives",
+    "section": "I) Les statistiques sur les brevets déposés",
+    "text": "I) Les statistiques sur les brevets déposés\n\n\n\nStatistiques sur les brevets déposés par les entreprises\n\n\nMinimum\nMédiane\nMaximum\nMoyenne\nÉcart type\nManquantes\n\n\n\n\n1\n4\n17702\n31.66895\n363.4751\n0\n\n\n\n\n\n\n\n\nClassement des entreprises ayant déposées le plus grand nombre de brevets\n\n\nRang\nNom de l'entreprise\nNombre de brevets\n\n\n\n\n1\nCommissariat à l'Énergie Atomique et aux Énergies Alternatives\n17702\n\n\n2\nCentre National de la Recherche Scientifique (C.N.R.S.)\n15909\n\n\n3\nValeo\n10116\n\n\n4\nAlcatel\n10101\n\n\n5\nThomson\n8415\n\n\n\n\n\n\n\n\n\n\nListe des domaines où le plus de brevets ont été déposés : Codes et Descriptions\n\n\nRang\nIPC\nDescription\nNombre de brevets\n\n\n\n\n1\nH01L\nDispositifs à semi-conducteurs ; dispositifs électriques à l'état solide non prévus ailleurs\n681\n\n\n2\nA61K\nPréparation à usage médical, dentaire ou pour la toilette\n400\n\n\n3\nF21S\nDispostifs d'éclairage non portatifs ; dispositifs d'éclairages de véhicules spécialement adaptés à l'extérieur des véhicules\n276\n\n\n4\nH04W\nRéseaux de la communication sans fil\n266\n\n\n5\nH04N\nTransmission d'images, Télévison\n220\n\n\n\n\n\n\n\n\n\n\nClassement des villes ayant enregistrées le plus grand nombre de brevets\n\n\nRang\nVille\nCode postal\nNombre de brevets\n\n\n\n\n1\nParis\n75000\n105557\n\n\n2\nBoulogne-Billancourt\n92012\n17750\n\n\n3\nCourbevoie\n92026\n14999\n\n\n4\nLe Mesnil-Saint-Denis\n78320\n10116\n\n\n5\nIssy-les-Moulineaux\n92040\n9688\n\n\n\n\n\n\n\n\n\n\nClassement des départements ayant enregistrés le plus grand nombre de dépôts de brevets\n\n\nRang\nNuméro\nNom du département\nNombre de brevets\n\n\n\n\n1\n75\nParis\n105557\n\n\n2\n92\nHauts-de-Seine\n71966\n\n\n3\n78\nYvelines\n22506\n\n\n4\n69\nRhône\n13608\n\n\n5\n38\nIsère\n12285"
+  },
+  {
+    "objectID": "stats.html#ii-les-statistiques-sur-les-offres-demploi-proposées",
+    "href": "stats.html#ii-les-statistiques-sur-les-offres-demploi-proposées",
+    "title": "Statistiques descriptives",
+    "section": "II) Les statistiques sur les offres d’emploi proposées",
+    "text": "II) Les statistiques sur les offres d’emploi proposées\n\n1) Pour les variables numériques\n\n\n\nStatistiques sur les offres d’emploi proposées par les entreprises\n\n\nMinimum\nMédiane\nMaximum\nMoyenne\nÉcart type\nManquantes\n\n\n\n\n1\n1\n68\n4.36259\n8.537308\n0\n\n\n\n\n\n\n\n\nStatistiques sur les salaires annuels offerts par les entreprises (en euros)\n\n\nMinimum\nMédiane\nMaximum\nMoyenne\nÉcart type\nManquantes\n\n\n\n\n9000\n46250\n158625\n50853.55\n24612.92\n518\n\n\n\n\n\n\n\n2) Pour les variables en chaîne de caractères\n\n\n\nListe des coméptences les plus demandées par les entreprises\n\n\nRang\nCompétence requise\nFréquence\n\n\n\n\n1\nEsprit d'équipe\n502\n\n\n2\nPython\n267\n\n\n3\nSQL\n204\n\n\n4\nGit\n185\n\n\n5\nStatistiques\n178\n\n\n\n\n\n\n\n\n\n\nListe des secteurs offrant les salaires annuels les plus attractifs (en euros)\n\n\nRang\nSecteur\nSalaire annuel (en euros)\n\n\n\n\n1\nService public des collectivités territoriales\n60000.00\n\n\n2\nBEP, CAP, Services aux Personnes, Particuliers\n56750.00\n\n\n3\nIndustrie high-tech, Telecom, Média, Internet, Communication\n56500.00\n\n\n4\nSecteur Energie, Environnement\n51666.67\n\n\n5\nServices aux Entreprises\n48422.35\n\n\n\n\n\n\n\n\n\n\nListe des départements offrant les salaires annuels les plus attractifs (en euros)\n\n\nRang\nNuméro\nNom du département\nSalaire annuel (en euros)\n\n\n\n\n1\n45\nLoiret\n72500\n\n\n2\n78\nYvelines\n68396\n\n\n3\n75\nParis\n65242\n\n\n4\n64\nPyrénées-Atlantiques\n50000\n\n\n5\n38\nIsère\n49670"
+  },
+  {
+    "objectID": "stats.html#iii-les-statistiques-sur-la-base-combinant-les-brevets-et-les-offres-demploi",
+    "href": "stats.html#iii-les-statistiques-sur-la-base-combinant-les-brevets-et-les-offres-demploi",
+    "title": "Statistiques descriptives",
+    "section": "III) Les statistiques sur la base combinant les brevets et les offres d’emploi",
+    "text": "III) Les statistiques sur la base combinant les brevets et les offres d’emploi"
+  },
+  {
+    "objectID": "index.html#bienvenue-sur-notre-site-web",
+    "href": "index.html#bienvenue-sur-notre-site-web",
+    "title": "Accueil",
+    "section": "Bienvenue sur notre site web",
+    "text": "Bienvenue sur notre site web\n\nDécouvrez notre site web dédié à la présentation des résultats de notre projet dans le cadre du cours de Remédiation en R.\n\n\nL’objectif de ce projet est de comprendre le lien entre la performance d’innovation des entreprises françaises (mesurée par les dépots de brevets entre 2010 et 2020) et leur demande de compétences. Dans un premier temps, en fournissant une vue d’ensemble des données à travers des statistiques descriptives. Puis dans un second temps, en effectuant des analyses de données afin d’en tirer des conclusions pertinentes.\n\n\nCe site est organisé en plusieurs sections pour une meilleure navigation et compréhension des données."
+  },
+  {
+    "objectID": "index.html#membres-de-léquipe",
+    "href": "index.html#membres-de-léquipe",
+    "title": "Accueil",
+    "section": "Membres de l’équipe",
+    "text": "Membres de l’équipe\n\nAJAX–RICAUD Lenny\nHAUROU Richard\nRAMANANTSALAMA Antsaniaina Lalatiana\nSALOUMI Leila\n\nMerci de votre visite et bonne navigation sur le site !"
+  },
+  {
+    "objectID": "donnees.html#i-analyse-des-relations-entre-innovation-offres-demploi-et-valorisation-salariale",
+    "href": "donnees.html#i-analyse-des-relations-entre-innovation-offres-demploi-et-valorisation-salariale",
+    "title": "Analyse de données",
+    "section": "I) Analyse des Relations entre Innovation, Offres d’Emploi et Valorisation Salariale",
+    "text": "I) Analyse des Relations entre Innovation, Offres d’Emploi et Valorisation Salariale\n\nFigure 1 : Relation entre innovation (nombre de brevets) et rémunération moyenne par entreprise"
+  },
+  {
+    "objectID": "donnees.html#ii-carte-interactive-des-brevets-et-offres-demploi-émis-par-departement",
+    "href": "donnees.html#ii-carte-interactive-des-brevets-et-offres-demploi-émis-par-departement",
+    "title": "Analyse de données",
+    "section": "II) Carte interactive des brevets et offres d’emploi émis par departement",
+    "text": "II) Carte interactive des brevets et offres d’emploi émis par departement"
+  },
+  {
+    "objectID": "donnees.html#iii-analyse-des-compétences-requises-au-croisement-des-salaires-et-de-linnovation",
+    "href": "donnees.html#iii-analyse-des-compétences-requises-au-croisement-des-salaires-et-de-linnovation",
+    "title": "Analyse de données",
+    "section": "III) Analyse des Compétences Requises au Croisement des Salaires et de l’Innovation",
+    "text": "III) Analyse des Compétences Requises au Croisement des Salaires et de l’Innovation\n\nFigure 6 : Nuage de mots des compétences requises pondérées par les salaires proposés"
+  }
+]

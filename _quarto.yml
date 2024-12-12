@@ -1,0 +1,23 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Projet R - M1 IREF"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Accueil
+      - href: stats.qmd
+        text: Statistiques descriptives
+      - href: donnees.qmd
+        text: Analyse de données
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-title: "Sur cette page"
+    
+editor: visual
