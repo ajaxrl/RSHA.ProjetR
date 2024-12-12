@@ -19,7 +19,7 @@ Cette section est consacrée à l'analyse des données provenant des différente
 :::
 
 ::: {.justify}
-Le graphique ci-dessous représente la relation entre le nombre de brevets déposés et le salaire annuel moyen proposé par différentes entreprises ou organisations. Les deux axes utilisent une échelle logarithmique : l'axe horizontal correspond au nombre de brevets, tandis que l'axe vertical montre les salaires annuels moyens en euros.
+Le graphique ci-dessous représente la relation entre le nombre de brevets déposés et le salaire annuel moyen proposé par différentes entreprises ou organisations. L'axe horizontal correspond au nombre de brevets (en échele logarithmique), tandis que l'axe vertical montre les salaires annuels moyens en euros.
 :::
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -59,21 +59,18 @@ graph1 = ggplot(data1, aes(
   geom_text(
     aes(label = firm_name),
     size = 4.2,         
-    nudge_y = 0.05 * max(data1$avg_wage), 
-    fontface = "bold",
+    nudge_y = 0.05 * max(data1$avg_wage),
     color = "black",  
     check_overlap = TRUE
   ) +
   scale_color_viridis_d(option = "D") +
   scale_x_log10() +
   labs(
-    x = "Nombre de brevets (échelle logarithmique)",
+    x = "Nombre de brevets (échelle log)",
     y = "Salaire annuel moyen (en euros)"
   ) +
   theme_minimal(base_size = 16) + 
   theme(
-    plot.title = element_text(hjust = 0.5, face = "bold", color = "darkblue"), 
-    axis.title = element_text(face = "bold"), 
     legend.position = "none",
     panel.grid.minor = element_blank(), 
     panel.grid.major = element_line(color = "gray90", linetype = "dashed") 
@@ -121,15 +118,12 @@ graph2 = ggplot(data2, aes(
   scale_x_log10() +
   scale_y_log10() +
   labs(
-    x = "Nombre de brevets (échelle logarithmique)",
-    y = "Nombre d'offres d'emploi"
+    x = "Nombre de brevets (échelle log)",
+    y = "Nombre d'offres (échelle log)"
   ) +
   theme_minimal(base_size = 16) +
-  theme(
-    plot.title = element_text(hjust = 0.5, face = "bold", color = "darkblue"), 
-    axis.title = element_text(face = "bold"), 
+  theme( 
     legend.position = "none",
-    panel.grid.minor = element_blank(), 
     panel.grid.major = element_line(color = "gray90", linetype = "dashed") 
   )
 
@@ -165,7 +159,7 @@ graph7 = ggplot(data7, aes(
   y = avg_wage,
   color = ipc_main_code,
   text = paste0(
-    "<b>Code IPC :</b> ", ipc_main_code,
+    "<b>IPC :</b> ", ipc_main_code,
     "<br><b>Nombre de brevets :</b> ", round(n_patents, 2),
     "<br><b>Salaire moyen :</b> ", round(avg_wage, 2), " €"
   )
@@ -174,32 +168,27 @@ graph7 = ggplot(data7, aes(
   geom_text(
     aes(label = ipc_main_code),
     size = 4,       
-    nudge_y = 0.05 * max(data7$avg_wage, na.rm = TRUE), 
-    fontface = "bold",
+    nudge_y = 0.05 * max(data7$avg_wage, na.rm = TRUE),
     color = "gray80",
     check_overlap = TRUE                 
   ) +
   geom_text(
     aes(label = ipc_main_code),
     size = 4.2,         
-    nudge_y = 0.05 * max(data7$avg_wage, na.rm = TRUE), 
-    fontface = "bold",
+    nudge_y = 0.05 * max(data7$avg_wage, na.rm = TRUE),
     color = "black",  
     check_overlap = TRUE
   ) +
   scale_color_viridis_d(option = "D") +
   scale_x_log10() +
   labs(
-    x = "Nombre moyen de brevets (échelle logarithmique)",
+    x = "Nombre moyen de brevets (échelle log)",
     y = "Salaire moyen (en euros)",
-    color = "Code IPC"
+    color = "IPC"
   ) +
   theme_minimal(base_size = 16) +
   theme(
-    plot.title = element_text(hjust = 0.5, face = "bold", color = "darkblue"),
-    axis.title = element_text(face = "bold"),
     legend.position = "right",
-    panel.grid.minor = element_blank(),
     panel.grid.major = element_line(color = "gray90", linetype = "dashed")
   )
 
@@ -207,7 +196,8 @@ interactive_graph7 = ggplotly(graph7, tooltip = "text")
 interactive_graph7
 ```
 ::: {.justify}
-Le graphique analyse la relation entre le nombre moyen de brevets et le salaire annuel moyen pour différents domaines technologiques identifiés par des codes IPC. 
+Le graphique analyse la relation entre le nombre moyen de brevets et le salaire annuel moyen pour différents domaines technologiques identifiés par leur classification internationale des brevets (IPC). 
+
 L'intérêt est de mettre en évidence les classifications de brevets les plus courantes ainsi que les domaines où les entreprises offrent les meilleures rémunérations.
 
 Le domaine "Éléments caractéristiques des chaussures; parties constitutives des chaussures" (A43B) est associé à un salaire moyen élevé, avoisinant 60 000 euros, avec un nombre de brevets déposés relativement modéré (469 brevets). Cela suggère que les innovations dans le domaine des chaussures impliquent des compétences techniques spécifiques et une certaine spécialisation, justifiant les salaires élevés, même si le volume total de brevets reste limité.
@@ -306,7 +296,7 @@ wordcloud(
   max.words = 100, 
   random.order = FALSE, 
   rot.per = 0.25,       
-  scale = c(6, 0.5),    
+  scale = c(7, 0.5),    
   colors = colors_palette,  
   family = "sans",      
   ordered.colors = TRUE
@@ -347,9 +337,9 @@ data10 = split_skills %>%
 data10 = data10 %>%
   mutate(
     tooltip = paste0(
-      "<b>Compétence:</b> ", top_skill_req,
-      "<br><b>Nombre de brevets:</b> ", n_patents,
-      "<br><b>Offres d'emploi:</b> ", n_offres
+      "<b>Compétence :</b> ", top_skill_req,
+      "<br><b>Nombre de brevets :</b> ", n_patents,
+      "<br><b>Offres d'emploi :</b> ", n_offres
     )
   )
 
@@ -363,16 +353,13 @@ scatterplot_jobs = ggplot(data10, aes(
   scale_x_log10() +  
   scale_y_log10() +  
   labs(
-    x = "Nombre de brevets (échelle logarithmique)",
-    y = "Nombre d'offres d'emploi (échelle logarithmique)",
+    x = "Nombre de brevets (échelle log)",
+    y = "Nombre d'offres d'emploi (échelle log)",
     color = "Compétence"
   ) +
   theme_minimal(base_size = 14) +
   theme(
-    plot.title = element_text(hjust = 0.5, face = "bold", color = "darkblue"),
-    axis.title = element_text(face = "bold"),
     legend.position = "none",  
-    panel.grid.minor = element_blank(),
     panel.grid.major = element_line(color = "gray90", linetype = "dashed")
   )
 
