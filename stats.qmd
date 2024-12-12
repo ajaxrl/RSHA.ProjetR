@@ -67,22 +67,20 @@ library(kableExtra)
 
 data = data.frame(
   Rang = c(1, 2, 3, 4, 5),
-  IPC = c("A61K","H01L","H04W", "H04N", "F21S", ),
+  IPC = c("A61K", "H01L", "H04W", "H04N", "F21S"),
   Description = c(
     "Préparation à usage médical, dentaire ou pour la toilette",
     "Dispositifs à semi-conducteurs ; dispositifs électriques à l'état solide non prévus ailleurs",
     "Réseaux de la communication sans fil",
     "Transmission d'images, Télévison",
-    "Dispostifs d'éclairage non portatifs ; dispositifs d'éclairages de véhicules spécialement adaptés à l'extérieur des véhicules",
-    
+    "Dispositifs d'éclairage non portatifs ; dispositifs d'éclairages de véhicules spécialement adaptés à l'extérieur des véhicules"
   ), 
-  Nombre=c(681, 400, 276, 266, 220)
-)
+  Nombre = c(69193, 25935, 13553, 12791, 10399))
 
-kable(data, caption = "Liste des domaines où le plus de brevets ont été déposés : Codes et Descriptions", 
-      format = "html", 
-      align = "l",
-      col.names = c("Rang", "IPC", "Description", "Nombre de brevets")) %>%
+kable(data, caption = "Liste des domaines où le plus de brevets ont été déposés : Codes et Descriptions",  
+      format = "html",  
+      align = "l", 
+      col.names = c("Rang", "IPC", "Description", "Nombre de brevets")) %>% 
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed"),
     full_width = FALSE

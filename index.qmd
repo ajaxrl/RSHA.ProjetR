@@ -13,7 +13,7 @@ Découvrez notre site web dédié à la présentation des résultats de notre pr
 :::
 
 ::: justify
-L'objectif de ce projet est de comprendre le lien entre la performance d’innovation des entreprises françaises (mesurée par les dépots de brevets entre 2010 et 2020) et leur demande de compétences. Dans un premier temps, en fournissant une vue d'ensemble des données à travers des [**statistiques descriptives**](stats.qmd). Puis dans un second temps, en effectuant des [**analyses de données**](donnees.qmd) afin d'en tirer des conclusions pertinentes.
+L'objectif de ce projet est de comprendre le lien entre la performance d’innovation des entreprises françaises (mesurée par les dépots de brevets entre 2010 et 2020) et leur demande de compétences en Data Science. Dans un premier temps, en fournissant une vue d'ensemble des données à travers des [**statistiques descriptives**](stats.qmd). Puis dans un second temps, en effectuant des [**analyses de données**](donnees.qmd) afin d'en tirer des conclusions pertinentes.
 :::
 
 ::: justify

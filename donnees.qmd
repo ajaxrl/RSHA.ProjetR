@@ -214,6 +214,8 @@ Ces trois secteurs montrent une forte diversité en termes de caractéristiques 
 :::
 
 ::: {.justify}
+Dans le cadre de nos analyses économétriques, nous avons choisi de conserver uniquement la matrice de corrélation, car les coefficients associés aux différentes variables n'étaient pas significatifs. La matrice nous permet d'examiner les relations entre les variables sans risquer de tirer des conclusions erronées à partir de coefficients non significatifs. 
+
 La matrice de corrélation suivante illustre les relations entre les principales variables de notre étude : le nombre d'offres d'emploi, le nombre de brevets déposés et le salaire annuel moyen.
 :::
 
@@ -251,7 +253,7 @@ De plus, la corrélation entre le nombre de brevets et le salaire moyen est éga
 
 ------------------------------------------------------------------------
 ::: {.justify}
-## II) Carte interactive des brevets et offres d'emploi émis par departement
+## II) Carte Interactive des Brevets et Offres d'emploi émis par Département
 :::
 
 ::: {.justify}
