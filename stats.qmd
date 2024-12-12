@@ -67,13 +67,14 @@ library(kableExtra)
 
 data = data.frame(
   Rang = c(1, 2, 3, 4, 5),
-  IPC = c("H01L","A61K","F21S","H04W", "H04N" ),
+  IPC = c("A61K","H01L","H04W", "H04N", "F21S", ),
   Description = c(
-    "Dispositifs à semi-conducteurs ; dispositifs électriques à l'état solide non prévus ailleurs",
     "Préparation à usage médical, dentaire ou pour la toilette",
-    "Dispostifs d'éclairage non portatifs ; dispositifs d'éclairages de véhicules spécialement adaptés à l'extérieur des véhicules",
+    "Dispositifs à semi-conducteurs ; dispositifs électriques à l'état solide non prévus ailleurs",
     "Réseaux de la communication sans fil",
-    "Transmission d'images, Télévison"
+    "Transmission d'images, Télévison",
+    "Dispostifs d'éclairage non portatifs ; dispositifs d'éclairages de véhicules spécialement adaptés à l'extérieur des véhicules",
+    
   ), 
   Nombre=c(681, 400, 276, 266, 220)
 )
@@ -102,7 +103,7 @@ data = data.frame(
     "Issy-les-Moulineaux"
   ),
   Code_postal= c(75000, 92012, 92026, 78320, 92040 ),
-  Brevets = c(105557, 17750, 14999, 10116, 9688)
+  Brevets = c(105557, 17747, 14999, 10116, 9688)
 )
 
 kable(data, caption = "Classement des villes ayant enregistrées le plus grand nombre de brevets", 
@@ -124,12 +125,12 @@ data = data.frame(
   Numéro = c(
     75,
     92,
-    78,
+    93,
     69,
-    38
+    78
   ), 
-  Département = c("Paris", "Hauts-de-Seine", "Yvelines", "Rhône", "Isère"),
-  Brevets = c(105557, 71966, 22506, 13608, 12285)
+  Département = c("Paris", "Hauts-de-Seine","Seine-Saint-Denis" , "Rhône", "Yvelines"),
+  Brevets = c(105557, 70066, 15671, 13506, 12328)
 )
 
 kable(data, caption = "Classement des départements ayant enregistrés le plus grand nombre de dépôts de brevets", 
@@ -193,7 +194,7 @@ data = data.frame(
     "Git",
     "Statistiques"
   ),
-  Nombre=c(502, 267, 204, 185, 178)
+  Nombre=c(502, 257, 204, 185, 178)
 )
 
 kable(data, caption = "Liste des coméptences les plus demandées par les entreprises", 
