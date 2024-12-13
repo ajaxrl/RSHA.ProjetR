@@ -214,7 +214,7 @@ Ces trois secteurs montrent une forte diversité en termes de caractéristiques 
 :::
 
 ::: {.justify}
-Dans le cadre de nos analyses économétriques, nous avons choisi de conserver uniquement la matrice de corrélation, car les coefficients associés aux différentes variables n'étaient pas significatifs. La matrice nous permet d'examiner les relations entre les variables sans risquer de tirer des conclusions erronées à partir de coefficients non significatifs. 
+Dans le cadre de nos analyses économétriques, nous avons choisi de conserver uniquement la matrice de corrélation, car les coefficients associés aux différentes variables n'étaient pas significatifs. Elle nous permet d'examiner les relations entre les variables sans risquer de tirer des conclusions erronées à partir de coefficients non significatifs. 
 
 La matrice de corrélation suivante illustre les relations entre les principales variables de notre étude : le nombre d'offres d'emploi, le nombre de brevets déposés et le salaire annuel moyen.
 :::
@@ -263,6 +263,56 @@ Cette carte interactive présente une vue géographique de la France, en détail
 
 -   **Le nombre d'offres d'emploi** : Ce nombre indique la quantité d'opportunités professionnelles disponibles dans chaque département. Les offres d'emploi sont un indicateur clé de la dynamique du marché du travail, montrant les secteurs qui recrutent activement dans chaque département.
 :::
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE, results='hide'}
+library(sf)
+library(readr)
+df1 = read_csv("CSV/departements_resume.csv")
+dpt=sf::st_read("CSV/departements-20180101.shp")
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(leaflet)
+library(dplyr)
+library(tidyr)
+library(htmltools)
+df1 = df1 %>% 
+  rename(code_insee = addr_dept_main)
+merged = merge(dpt, df1, by = "code_insee", all.x = TRUE)
+merged$Total_patents[merged$nom=="Paris"]=105557
+merged$Total_patents[merged$nom=="Rhône"]=13608
+merged$Total_offres[merged$nom=="Rhône"]=62
+
+popup= paste(
+  "<b>Département :</b>", merged$nom, "<br>",
+  "<b>Nombre de brevets :</b>", merged$Total_patents, "<br>",
+  "<b>Nombre d'offres total :</b>", merged$Total_offres
+)
+
+mergedBins=c(0,500,1000,2000,5000,10000,100000,110000)
+mergedPal=colorBin(palette="magma",domain=merged$Total_patents,bins=mergedBins,reverse = TRUE)
+
+leaflet()%>%
+  addProviderTiles(providers$OpenStreetMap.Mapnik, group = "Carte - standard") %>%
+  addPolygons(data=merged,color='black',
+              opacity=1,
+              weight=0.5,
+              fillColor=~mergedPal(Total_patents),
+              fillOpacity=0.8,
+              label= lapply(popup,htmltools::HTML),
+              highlightOptions = highlightOptions(color = "#E2068A",
+                                                  weight = 1.5,
+                                                  bringToFront = TRUE,
+                                                  fillOpacity = 0.5),
+              labelOptions =labelOptions(noHide = F))%>%
+  addLegend("bottomright",opacity=1,
+            colors=c("#fcfdbf","#feb078","#f1605d","#b73779",
+                     "#721f81","#2c115f","#000004"),
+            title="Nombre de brevets par département",
+            labels=c("< 500","500 - 1000","1000 - 2000","2000 - 5000",
+                     "5000 - 10000","10000 - 100000","> 100000"))%>%
+  setView(lng = 2.80, lat = 46.80, zoom = 5)
+```
 
 ::: {.justify}
 ## III) Analyse des Compétences Requises au Croisement des Salaires et de l'Innovation
