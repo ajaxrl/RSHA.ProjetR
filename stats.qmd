@@ -226,7 +226,7 @@ data = data.frame(
 kable(data, caption = "Liste des secteurs offrant les salaires annuels les plus attractifs", 
       format = "html", 
       align = "l",
-      col.names = c("Rang", "Secteur", "Salaire annuel (en euros)")) %>%
+      col.names = c("Rang", "Secteur", "Salaire annuel moyen")) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed"),
     full_width = FALSE
@@ -253,7 +253,7 @@ data = data.frame(
 kable(data, caption = "Liste des départements offrant les salaires annuels les plus attractifs", 
       format = "html", 
       align = "l", 
-      col.names = c("Rang", "Numéro", "Nom du département", "Salaire annuel (en euros)")) %>%
+      col.names = c("Rang", "Numéro", "Nom du département", "Salaire annuel moyen")) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed"),
     full_width = FALSE
