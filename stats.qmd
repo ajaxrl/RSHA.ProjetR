@@ -177,6 +177,8 @@ kable(data, format = "pipe",
       col.names = c("Minimum", "Médiane", "Maximum", "Moyenne", "Écart type", "Manquantes"))
 ```
 
+Nous avons pris la décision de retirer le salaire proposé par l'entreprise "La Relève" de notre analyse, car elle annonçait des salaires excessivement élevés, compris entre 50 000 et 70 000 euros par mois. Cette offre salariale se distinguait de manière significative des autres entreprises étudiées, ce qui en faisait une valeur aberrante dans notre étude.
+
 ### 2) Pour les variables en chaîne de caractères
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
@@ -185,25 +187,25 @@ library(kableExtra)
 
 data = data.frame(
   Rang = c(1, 2, 3, 4, 5),
-  Compétence = c(
-    "Esprit d'équipe",
-    "Python",
-    "SQL",
-    "Git",
-    "Statistiques"
-  ),
-  Nombre=c(502, 257, 204, 185, 178)
+  Entreprise = c(
+    "Vo2 Group",
+    "Suricate It",
+    "LeHibou",
+    "Visian",
+    "Nexoris"
+  ), 
+  Salaire = c("158625 €", "138650 €", "129250 €", "124550 €", "123375 €")
 )
 
-kable(data, caption = "Liste des coméptences les plus demandées par les entreprises", 
-      format = "html", 
-      align = "l",
-      col.names = c("Rang", "Compétence requise", "Fréquence")) %>%
+kable(data, 
+      caption = "Classement des entreprises offrant les salaires annuels les plus attractifs", 
+      format = "html", align = "l",
+      col.names = c("Rang", "Nom de l'entreprise", "Salaire annuel moyen")) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed"),
     full_width = FALSE
   )
-```
+```   
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(knitr)
@@ -218,10 +220,10 @@ data = data.frame(
     "Secteur Energie, Environnement",
     "Services aux Entreprises"
   ), 
-  Salaire =c(60000,56750,56500,51666.67,48422.35)
+  Salaire =c("60000 €","56750 €","56500 €", "51666.67 €","48422.35 €")
 )
 
-kable(data, caption = "Liste des secteurs offrant les salaires annuels les plus attractifs (en euros)", 
+kable(data, caption = "Liste des secteurs offrant les salaires annuels les plus attractifs", 
       format = "html", 
       align = "l",
       col.names = c("Rang", "Secteur", "Salaire annuel (en euros)")) %>%
@@ -245,13 +247,39 @@ data = data.frame(
     "38"
   ),
   Département =c("Loiret", "Yvelines", "Paris", "Pyrénées-Atlantiques", "Isère"),
-  Salaire = c(72500, 68396, 65242, 50000, 49670)
+  Salaire = c("72500 €", "68396 €", "65242 €", "50000 €", "49670 €")
 )
 
-kable(data, caption = "Liste des départements offrant les salaires annuels les plus attractifs (en euros)", 
+kable(data, caption = "Liste des départements offrant les salaires annuels les plus attractifs", 
       format = "html", 
       align = "l", 
       col.names = c("Rang", "Numéro", "Nom du département", "Salaire annuel (en euros)")) %>%
+  kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE
+  )
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(knitr)
+library(kableExtra)
+
+data = data.frame(
+  Rang = c(1, 2, 3, 4, 5),
+  Compétence = c(
+    "Esprit d'équipe",
+    "Python",
+    "SQL",
+    "Git",
+    "Statistiques"
+  ),
+  Nombre=c(502, 257, 204, 185, 178)
+)
+
+kable(data, caption = "Liste des coméptences les plus demandées par les entreprises", 
+      format = "html", 
+      align = "l",
+      col.names = c("Rang", "Compétence requise", "Fréquence")) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover", "condensed"),
     full_width = FALSE
